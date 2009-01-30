@@ -24,14 +24,16 @@ var all_td_negrita, this_td;
 all_td_negrita = xpath("//td[@class='Negrita']");
 
 for (var i = 0; i < all_td_negrita.snapshotLength; i++) {
-	this_td = all_td_negrita.snapshotItem(i);
+        this_td = all_td_negrita.snapshotItem(i);
+        var text = this_td.childNodes[0].textContent;
 
-	// Elimina la etapa de la primera columna para reducir información inservible
-	this_td.childNodes[0].textContent = this_td.childNodes[0].textContent.replace(/(.*) - .*/, "$1")
-
-	for (var j =0; j < malosProyectos.length; j++) {
-		if(this_td.childNodes[0].textContent.match(malosProyectos[j])) {
-			this_td.parentNode.parentNode.removeChild(this_td.parentNode);
-		} 
-	}
+        for (var j =0; j < malosProyectos.length; j++) {
+                if(text.match(malosProyectos[j])) {
+                        this_td.parentNode.parentNode.removeChild(this_td.parentNode);
+                } else {
+                        // Elimina la etapa de la primera columna para reducir información inservible
+                        // e incluye un subrayado para hacer que la primera columna ocupe una única línea
+                        this_td.childNodes[0].textContent = text.replace(/(.*) - .*/, "$1").replace(/ /g, "_");
+                }
+        }
 }
