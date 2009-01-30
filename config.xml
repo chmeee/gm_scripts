@@ -1,0 +1,21 @@
+<UserScriptConfig>
+	<Script filename="googlesecure.user.js" name="Google Secure" namespace="userscripts.org" description="Force Google Sites to be HTTPS" enabled="true" basedir=".">
+		<Include>http://mail.google.com/*</Include>
+		<Include>http://www.google.com/calendar/*</Include>
+		<Include>http://docs.google.com/*</Include>
+	</Script>
+	<Script filename="hoja_de_horas.user.js" name="hoja de horas" namespace="erp" description="Elimina proyectos que no quieres ver" enabled="true" basedir="hoja_de_horas">
+		<Include>http://erp/openbravo/ad_process/HoursEmployee_Charge.html</Include>
+		<Include>http://erp/openbravo/ad_process/HoursEmployee.html</Include>
+		<Include>http://erp:8880/obiso/ad_process/HoursEmployee.html</Include>
+		<Include>http://erp:8880/obiso/ad_process/HoursEmployee_Charge.html</Include>
+	</Script>
+	<Script filename="frontalopenbravo.user.js" name="FrontalOpenbravo" namespace="erp" description="Sustituye algunos elementos de la pantalla de login" enabled="true" basedir="frontalopenbravo">
+		<Include>http://erp:8880/obiso/security/Login_FS.html</Include>
+		<Include>http://erp:8880/obiso/security/Login_F1.html?Command=LOGIN</Include>
+		<Include>http://erp:8880/obiso/security/Login_F1.html</Include>
+	</Script>
+	<Script filename="menuverticalopenbravo.user.js" name="MenuVerticalOpenbravo" namespace="erp" description="" enabled="true" basedir="menuverticalopenbravo">
+		<Include>http://erp:8880/obiso/utility/VerticalMenu.html</Include>
+	</Script>
+</UserScriptConfig>
