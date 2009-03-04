@@ -29,7 +29,8 @@ for (var i = 0; i < all_td_negrita.snapshotLength; i++) {
 
         for (var j =0; j < malosProyectos.length; j++) {
                 if(text.match(malosProyectos[j])) {
-                        this_td.parentNode.parentNode.removeChild(this_td.parentNode);
+//                        this_td.parentNode.parentNode.removeChild(this_td.parentNode);
+			this_td.parentNode.style.display="none";
                 } else {
                         // Elimina la etapa de la primera columna para reducir información inservible
                         // e incluye un subrayado para hacer que la primera columna ocupe una única línea
